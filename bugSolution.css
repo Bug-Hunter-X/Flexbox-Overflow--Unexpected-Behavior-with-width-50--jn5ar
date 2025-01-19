@@ -1,0 +1,15 @@
+The corrected CSS rule uses `box-sizing: border-box;` to ensure padding and borders are included within the element's specified width:
+
+```css
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  width: 50%;
+  box-sizing: border-box;
+}
+```
+
+This ensures that the 50% width calculation includes padding and border, preventing unexpected overflow.  Consider adding `min-width` and `max-width` for better control of item sizes when content varies significantly.
