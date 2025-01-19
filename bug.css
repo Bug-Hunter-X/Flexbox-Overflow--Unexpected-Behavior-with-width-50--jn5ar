@@ -1,0 +1,14 @@
+The following CSS rule is causing unexpected behavior:
+
+```css
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  width: 50%;
+}
+```
+
+This rule intends to place two `.item` elements side-by-side, evenly spaced. However, if the content within an `.item` element is too large, it can cause the flexbox to overflow or collapse unexpectedly.  The issue is that `width: 50%` doesn't account for padding, margins, and borders added to `.item`.  These add to the element's total width, exceeding 50% and causing the problem.
